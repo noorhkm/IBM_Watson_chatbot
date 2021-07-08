@@ -1,0 +1,365 @@
+{
+  "intents": [
+    {
+      "intent": "ask1",
+      "examples": [
+        {
+          "text": "what is this panel ?"
+        },
+        {
+          "text": "what this page do ?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "bye",
+      "examples": [
+        {
+          "text": "bye"
+        },
+        {
+          "text": "goodbye"
+        },
+        {
+          "text": "ok, thank you."
+        },
+        {
+          "text": "see you later."
+        },
+        {
+          "text": "thanks, bye."
+        },
+        {
+          "text": "thank you for answering. bye"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "الذراع",
+      "examples": [
+        {
+          "text": "ايش الارم"
+        },
+        {
+          "text": "ايش الذراع"
+        },
+        {
+          "text": "كيف اتحكم بالارم"
+        },
+        {
+          "text": "كيف اتحكم بالذراع"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "امام",
+      "examples": [
+        {
+          "text": "كيف احرك القاعدة للامام ؟"
+        },
+        {
+          "text": "كيف يتحرك الروبوت للامام ؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ترحيب",
+      "examples": [
+        {
+          "text": "good evening"
+        },
+        {
+          "text": "good morning"
+        },
+        {
+          "text": "hello"
+        },
+        {
+          "text": "hi"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "تشغيل",
+      "examples": [
+        {
+          "text": "كيف احرك الذراع ؟"
+        },
+        {
+          "text": "كيف اشغل الذراع ؟"
+        },
+        {
+          "text": "كيف تتحرك الذراع ؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "حفظ",
+      "examples": [
+        {
+          "text": "ايش اسوي عشان اشغل الذراع ؟"
+        },
+        {
+          "text": "كيف احفظ قيم السلايدر؟"
+        },
+        {
+          "text": "كيف احفظ معلومات السلايدر؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "خلف",
+      "examples": [
+        {
+          "text": "كيف احرك الفاعدة للخلف ؟"
+        },
+        {
+          "text": "كيف يتحرك الروبوت للخلف ؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "سلادير",
+      "examples": [
+        {
+          "text": "what this slider control ?"
+        },
+        {
+          "text": "what this slider do ?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "قاعدة",
+      "examples": [
+        {
+          "text": "how can we control the base ?"
+        },
+        {
+          "text": "how to stop the base ?"
+        },
+        {
+          "text": "right side panel"
+        },
+        {
+          "text": "we just need to press the button to move the base ?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "وقف",
+      "examples": [
+        {
+          "text": "كيف اعمل ستوب ؟"
+        },
+        {
+          "text": "كيف اوقف الروبوت عن الحركة ؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "يسار",
+      "examples": [
+        {
+          "text": "كيف احرك القاعدة لليسار ؟"
+        },
+        {
+          "text": "كيف يتحرك الروبوت لليسار ؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "يمين",
+      "examples": [
+        {
+          "text": "كيف تلف القاعدة لليمين ؟"
+        },
+        {
+          "text": "كيف يتحرك الروبوت لجهة اليمين ؟"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_10_1625722252377",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "bye",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank you for asking. Goodbye ^^."
+              },
+              {
+                "text": "Thank you, have a nice day. ^^"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#bye",
+      "dialog_node": "node_10_1625722252377",
+      "previous_sibling": "node_6_1625721956240"
+    },
+    {
+      "type": "standard",
+      "title": "slider",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The sliders in the left side panel is to control each piece of the robot arm."
+              },
+              {
+                "text": "As you can see in the left panel. there are five sliders that controls the five pieces in the arm. each slider can control one piece. then save it and press play. the arm will move as the given values."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#سلادير",
+      "dialog_node": "node_4_1625721367667",
+      "previous_sibling": "node_9_1625462716881"
+    },
+    {
+      "type": "standard",
+      "title": "base",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "In the right side panel we control the robot base by the five buttons. just press it and the base will move according to which button you pressed."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#قاعدة",
+      "dialog_node": "node_6_1625721956240",
+      "previous_sibling": "node_4_1625721367667"
+    },
+    {
+      "type": "standard",
+      "title": "ask1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This site is controlling our robot arm and base. the left panel for robot arm, and the right panel for controlling the robot base."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#ask1",
+      "dialog_node": "node_9_1625462716881",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "ترحيب",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi there, How can I help you ?"
+              },
+              {
+                "text": "Hello, How can I help you ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#ترحيب",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "robot chatting",
+  "language": "en",
+  "description": ""
+}
