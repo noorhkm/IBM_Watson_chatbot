@@ -1,0 +1,182 @@
+{
+  "intents": [
+    {
+      "intent": "bad",
+      "examples": [
+        {
+          "text": "bad"
+        },
+        {
+          "text": "not good"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "eval",
+      "examples": [
+        {
+          "text": "can i evaluate this site?"
+        },
+        {
+          "text": "how can i evaluate?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "good",
+      "examples": [
+        {
+          "text": "excellent"
+        },
+        {
+          "text": "good"
+        },
+        {
+          "text": "nice"
+        },
+        {
+          "text": "very good"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "welcom",
+      "examples": [
+        {
+          "text": "hello"
+        },
+        {
+          "text": "hi"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_2_1627418941353",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "thank you very much we will try to be better."
+              },
+              {
+                "text": "thank you for evaluating us."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#good || #bad",
+      "dialog_node": "node_2_1627418941353",
+      "previous_sibling": "node_8_1627418784001"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "say good or bad please"
+              },
+              {
+                "text": "choose good or bad"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#eval",
+      "dialog_node": "node_8_1627418784001",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#welcom",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "My first skill",
+  "language": "en",
+  "description": ""
+}
